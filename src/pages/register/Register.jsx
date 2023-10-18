@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 import Input from "../../components/utility/Input";
 import Checkbox from "../../components/utility/Checkbox";
 import { useState } from "react";
@@ -7,6 +6,7 @@ import useAuthInfo from "../../hooks/useAuthInfo";
 import ErrorAlert from "../../components/utility/ErrorAlert";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/utility/SocialLogin";
 
 const Register = () => {
   const [error, setError] = useState(null);
@@ -67,6 +67,8 @@ const Register = () => {
       });
   };
 
+  
+
   return (
     <div className="dark:bg-slate-900 bg-gray-100 flex h-full items-center py-16">
       <div className="w-full max-w-md mx-auto p-6">
@@ -89,10 +91,7 @@ const Register = () => {
             </div>
 
             <div className="mt-5">
-              <button type="button" className="social-btn">
-                <FcGoogle className="text-xl" />
-                Register with Google
-              </button>
+              <SocialLogin>Register with Google</SocialLogin>
 
               <div className="social-or">Or</div>
 

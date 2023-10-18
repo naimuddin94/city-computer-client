@@ -6,6 +6,7 @@ import { useState } from "react";
 import useAuthInfo from "../../hooks/useAuthInfo";
 import ErrorAlert from "../../components/utility/ErrorAlert";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/utility/SocialLogin";
 
 const Login = () => {
   const [error, setError] = useState(null);
@@ -59,10 +60,7 @@ const Login = () => {
             </div>
 
             <div className="mt-5">
-              <button type="button" className="social-btn">
-                <FcGoogle className="text-xl" />
-                Login with Google
-              </button>
+              <SocialLogin>Login with Google</SocialLogin>
 
               <div className="social-or">Or</div>
 

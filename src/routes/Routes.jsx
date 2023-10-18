@@ -6,6 +6,14 @@ import Cart from "../pages/cart/Cart";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 
+const homeLoader = async () => {
+  const [bannerDataList] = await Promise.all([
+    fetch("http://localhost:5000/banner").then((response) => response.json()),
+  ]);
+
+  return { bannerDataList };
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -14,6 +22,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => homeLoader(),
       },
       {
         path: "/add-product",

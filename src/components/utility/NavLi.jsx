@@ -9,7 +9,7 @@ const NavLi = () => {
       <CustomLi path="/add-product">Add Product</CustomLi>
       <CustomLi path="/cart">My Cart</CustomLi>
       {user ? (
-        <button className="custom-btn w-fit py-2" onClick={() => logOut()}>
+        <button className="btn btn-sm w-fit py-2" onClick={() => logOut()}>
           Logout
         </button>
       ) : (

@@ -48,7 +48,7 @@ const Navbar = () => {
       </div>
 
       <div className="justify-end">
-        <h2 className="hidden sm:inline text-slate-300 font-mono">
+        <h2 className="hidden sm:inline text-slate-300 font-mono mr-3">
           {user && user?.displayName}
         </h2>
         {user && (
