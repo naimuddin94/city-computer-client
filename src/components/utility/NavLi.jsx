@@ -1,6 +1,8 @@
+import useAuthInfo from "../../hooks/useAuthInfo";
 import CustomLi from "./CustomLi";
 
 const NavLi = () => {
+  const { switchTheme } = useAuthInfo();
   return (
     <>
       <CustomLi path="/">Home</CustomLi>
@@ -10,7 +12,7 @@ const NavLi = () => {
       <CustomLi path="/register">Register</CustomLi>
       <label className="swap swap-rotate">
         {/* this hidden checkbox controls the state */}
-        <input type="checkbox" />
+        <input type="checkbox" onClick={switchTheme} />
 
         {/* sun icon */}
         <svg
