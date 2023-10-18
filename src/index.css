@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .text-hover {
+    @apply hover:text-yellow-300 cursor-pointer duration-200;
+  }
+}
