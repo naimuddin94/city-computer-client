@@ -7,7 +7,7 @@ import Footer from "../components/shared/Footer";
 const MainLayout = () => {
   const { darkMode } = useAuthInfo();
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div className={darkMode ? "dark bg-gray-800" : "bg-gray-200"}>
       <Header />
       <Navbar />
       <Outlet />

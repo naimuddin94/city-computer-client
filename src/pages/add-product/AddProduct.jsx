@@ -1,22 +1,24 @@
 import StarRatings from "react-star-ratings";
-import { BsStarFill, BsStar } from "react-icons/bs";
 import Input from "../../components/utility/Input";
 import { useState } from "react";
+import Swal from "sweetalert2";
+
+const brandOptions = ["Asus", "Hp", "Intel", "Gigabyte", "Msi", "Samsung"];
+
+const categoryOptions = [
+  "CPU",
+  "Monitor",
+  "Motherboard",
+  "RAM",
+  "HDD",
+  "SSD",
+  "Caching",
+  "Laptop",
+  "Graphics Card",
+];
 
 const AddProduct = () => {
   const [rating, setRating] = useState(5);
-  const brandOptions = ["ASUS", "HP", "INTEL", "GIGABYTE", "MSI", "LENEVO"];
-
-  const categoryOptions = [
-    "CPU",
-    "MONITOR",
-    "MOTHERBOARD",
-    "RAM",
-    "HDD",
-    "SSD",
-    "CACHING",
-    "POWERSUPLY",
-  ];
 
   const handleProduct = (event) => {
     event.preventDefault();
@@ -34,9 +36,28 @@ const AddProduct = () => {
       category,
       price,
       description,
-      rating
+      rating,
     };
-    console.log(product);
+
+    fetch("http://localhost:5000/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.insertedId) {
+          form.reset();
+          Swal.fire({
+            title: "Success!",
+            text: "Product added successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+        }
+      });
   };
   return (
     <div className="relative overflow-hidden dark:bg-gray-800">

@@ -5,13 +5,17 @@ import AddProduct from "../pages/add-product/AddProduct";
 import Cart from "../pages/cart/Cart";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
+import BrandDetails from "../pages/brand-details/BrandDetails";
 
 const homeLoader = async () => {
-  const [bannerDataList] = await Promise.all([
+  const [bannerDataList, companies] = await Promise.all([
     fetch("http://localhost:5000/banner").then((response) => response.json()),
+    fetch("http://localhost:5000/companies").then((response) =>
+      response.json()
+    ),
   ]);
 
-  return { bannerDataList };
+  return { bannerDataList, companies };
 };
 
 const router = createBrowserRouter([
@@ -39,6 +43,11 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/brand/:name",
+        element: <BrandDetails />,
+        loader: () => fetch("http://localhost:5000/companies"),
       },
     ],
   },
