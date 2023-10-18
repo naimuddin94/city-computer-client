@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import NavLi from "../utility/NavLi";
-
+import useAuthInfo from "../../hooks/useAuthInfo";
 
 const Navbar = () => {
+  const { user } = useAuthInfo();
+  const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i.test(user?.photoURL);
   return (
     <div className="navbar justify-between z-50 max-w-[1440px] mx-auto text-gray-100 bg-[#3a4468] px-4 md:px-8 sticky top-0">
       <div className="">
@@ -43,6 +45,25 @@ const Navbar = () => {
             <NavLi />
           </ul>
         </div>
+      </div>
+
+      <div className="justify-end">
+        <h2 className="hidden sm:inline text-slate-300 font-mono">
+          {user && user?.displayName}
+        </h2>
+        {user && (
+          <label className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              <img
+                src={
+                  urlRegex
+                    ? user.photoURL
+                    : "https://i.postimg.cc/m2HKMNv9/istockphoto-1451587807-612x612.jpg"
+                }
+              />
+            </div>
+          </label>
+        )}
       </div>
     </div>
   );

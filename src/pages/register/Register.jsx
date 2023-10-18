@@ -6,6 +6,7 @@ import { useState } from "react";
 import useAuthInfo from "../../hooks/useAuthInfo";
 import ErrorAlert from "../../components/utility/ErrorAlert";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const [error, setError] = useState(null);
@@ -44,14 +45,19 @@ const Register = () => {
         event.target.reset();
         navigate("/");
         setError(null);
-        alert("Account created successfully");
+        Swal.fire({
+          title: "Success!",
+          text: "Account created successfully",
+          icon: "success",
+          confirmButtonText: "Ok",
+        });
         // update profile
         updateProfile(result.user, {
           displayName: name,
           photoURL: photo,
         })
           .then(() => console.log("User name update successfully"))
-          .catch((err) => alert("During update profile", err.message));
+          .catch((err) => console.log("During update profile", err.message));
       })
       .catch((err) => {
         setLoading(false);
@@ -102,7 +108,7 @@ const Register = () => {
                     Password
                   </Input>
 
-                  <Checkbox>
+                  <Checkbox require={true}>
                     I accept the{" "}
                     <span className="text-blue-600 cursor-pointer hover:underline font-medium">
                       Terms and Conditions

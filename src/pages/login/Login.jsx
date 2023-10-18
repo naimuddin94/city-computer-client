@@ -25,7 +25,7 @@ const Login = () => {
           title: "Success!",
           text: "Login successfully",
           icon: "success",
-          confirmButtonText: "Cool",
+          confirmButtonText: "Ok",
         });
         setError(null);
         e.target.reset();
