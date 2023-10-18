@@ -1,6 +1,6 @@
 import { FaPhone } from "react-icons/fa6";
 import { MdEmail, MdSearch } from "react-icons/md";
-import { BiSolidContact, BiCartAlt } from "react-icons/bi";
+import { BiSolidContact } from "react-icons/bi";
 import {BsFillQuestionDiamondFill} from "react-icons/bs" 
 
 import { Link } from "react-router-dom";
