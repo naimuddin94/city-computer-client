@@ -23,7 +23,7 @@ const Header = () => {
           <div className="relative h-10 flex justify-center rounded-lg group focus-within:ring-2 focus-within:ring-yellow-400">
             <input
               type="text"
-              className="w-full py-1 pl-4 border rounded-l-lg focus:outline-none"
+              className="w-full py-2 pl-4 border rounded-l-lg focus:outline-none dark:bg-black/40 text-slate-700 dark:text-slate-200"
               placeholder="Search here..."
             />
             <button className="bg-yellow-400 rounded-r-md text-white py-1 px-4 hover:bg-gray-300 hover:text-gray-600 duration-200">

@@ -15,7 +15,7 @@ const Checkbox = ({ name, children }) => {
 
 Checkbox.propTypes = {
   name: PropTypes.string,
-  children: PropTypes.string,
+  children: PropTypes.any,
 };
 
 export default Checkbox;
