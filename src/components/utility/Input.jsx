@@ -1,6 +1,12 @@
 import PropTypes from "prop-types";
 
-const Input = ({ children, type = "text", name = "", placeholder = "" }) => {
+const Input = ({
+  children,
+  type = "text",
+  name = "",
+  placeholder = "",
+  defaultValue = "",
+}) => {
   return (
     <div>
       <label className="block text-sm mb-2 dark:text-white">{children}</label>
@@ -8,6 +14,7 @@ const Input = ({ children, type = "text", name = "", placeholder = "" }) => {
         <input
           type={type}
           name={name}
+          defaultValue={defaultValue}
           placeholder={placeholder}
           className="py-3 px-4 border block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
           required
@@ -22,6 +29,7 @@ Input.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,
   placeholder: PropTypes.string,
+  defaultValue: PropTypes.string,
 };
 
 export default Input;

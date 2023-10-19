@@ -7,6 +7,7 @@ import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import BrandDetails from "../pages/brand-details/BrandDetails";
 import ProductDetails from "../pages/Product-details/ProductDetails";
+import UpdateProduct from "../pages/update-product/UpdateProduct";
 
 const homeLoader = async () => {
   const [bannerDataList, companies] = await Promise.all([
@@ -53,6 +54,12 @@ const router = createBrowserRouter([
       {
         path: "/products/:id",
         element: <ProductDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateProduct />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.id}`),
       },
