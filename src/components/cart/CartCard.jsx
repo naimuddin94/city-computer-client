@@ -5,7 +5,7 @@ import useAuthInfo from "../../hooks/useAuthInfo";
 
 const CartCard = ({ product }) => {
   const { cart, setCart } = useAuthInfo();
-  const { _id, name, photo, brand, price, description } = product;
+  const { _id, name, photo, price, description } = product;
 
   const handleDelete = (id) => {
     console.log(id);
