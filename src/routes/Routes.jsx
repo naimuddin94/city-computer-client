@@ -6,6 +6,7 @@ import Cart from "../pages/cart/Cart";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import BrandDetails from "../pages/brand-details/BrandDetails";
+import ProductDetails from "../pages/Product-details/ProductDetails";
 
 const homeLoader = async () => {
   const [bannerDataList, companies] = await Promise.all([
@@ -48,6 +49,12 @@ const router = createBrowserRouter([
         path: "/brand/:name",
         element: <BrandDetails />,
         loader: () => fetch("http://localhost:5000/companies"),
+      },
+      {
+        path: "/products/:id",
+        element: <ProductDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
       },
     ],
   },

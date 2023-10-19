@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import StarRatings from "react-star-ratings";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const { _id, name, photo, brand, category, price, description, rating } =
@@ -42,8 +43,12 @@ const ProductCard = ({ product }) => {
           </h2>
         </div>
         <div className="flex gap-5 justify-end">
-          <button className="btn btn-active bg-yellow-400">Details</button>
-          <button className="btn btn-active bg-[#D83F31]">Update</button>
+          <Link to={`/products/${_id}`}>
+            <button className="btn btn-active bg-yellow-400">Details</button>
+          </Link>
+          <Link to={`/update/${_id}`}>
+            <button className="btn btn-active bg-[#D83F31]">Update</button>
+          </Link>
         </div>
       </div>
     </div>

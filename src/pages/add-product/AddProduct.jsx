@@ -15,6 +15,8 @@ const categoryOptions = [
   "Caching",
   "Laptop",
   "Graphics Card",
+  "VR",
+  "Others",
 ];
 
 const AddProduct = () => {
