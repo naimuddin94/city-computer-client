@@ -2,7 +2,7 @@ import StarRatings from "react-star-ratings";
 import Input from "../../components/utility/Input";
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import BackButton from "../../components/utility/BackButton";
 
 const brandOptions = ["Asus", "Hp", "Intel", "Gigabyte", "Msi", "Samsung"];
@@ -34,6 +34,7 @@ const UpdateProduct = () => {
     rating: loadRating,
   } = product;
   const [rating, setRating] = useState(loadRating);
+  const navigate = useNavigate();
 
   const handleProduct = (event) => {
     event.preventDefault();
@@ -55,25 +56,25 @@ const UpdateProduct = () => {
     };
     console.log(product);
 
-    // fetch("", {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(product),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     if (data.insertedId) {
-    //       form.reset();
-    //       Swal.fire({
-    //         title: "Success!",
-    //         text: "Product added successfully",
-    //         icon: "success",
-    //         confirmButtonText: "Ok",
-    //       });
-    //     }
-    //   });
+    fetch(`http://localhost:5000/update/${_id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.modifiedCount) {
+          navigate(-1);
+          Swal.fire({
+            title: "Success!",
+            text: "Product update successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+        }
+      });
   };
   return (
     <div className="relative overflow-hidden dark:bg-gray-800">
