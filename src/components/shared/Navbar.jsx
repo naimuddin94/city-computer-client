@@ -36,6 +36,11 @@ const Navbar = () => {
           to="/"
           className="btn btn-ghost normal-case text-lg md:text-2xl font-satisfy font-bold"
         >
+          <img
+            src="https://i.postimg.cc/4xmVH2kP/city-computers.png"
+            alt=""
+            className="hidden sm:inline h-10 rounded-full"
+          />
           City Computers
         </Link>
       </div>
