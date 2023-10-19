@@ -2,12 +2,14 @@ import useAuthInfo from "../../hooks/useAuthInfo";
 import CustomLi from "./CustomLi";
 
 const NavLi = () => {
-  const { switchTheme, user, logOut } = useAuthInfo();
+  const { switchTheme, user, logOut, cart } = useAuthInfo();
   return (
     <>
       <CustomLi path="/">Home</CustomLi>
       <CustomLi path="/add-product">Add Product</CustomLi>
-      <CustomLi path="/cart">My Cart</CustomLi>
+      <CustomLi path="/cart">
+        My Cart-{cart.length}
+      </CustomLi>
       {user ? (
         <button className="btn btn-sm w-fit py-2" onClick={() => logOut()}>
           Logout

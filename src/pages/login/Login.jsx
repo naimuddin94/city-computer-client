@@ -1,5 +1,4 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 import Input from "../../components/utility/Input";
 import Checkbox from "../../components/utility/Checkbox";
 import { useState } from "react";

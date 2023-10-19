@@ -1,14 +1,17 @@
 import { FcGoogle } from "react-icons/fc";
 import PropTypes from "prop-types";
 import useAuthInfo from "../../hooks/useAuthInfo";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const SocialLogin = ({ children }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const { signInWithGoogle } = useAuthInfo();
   const googleLogin = () => {
     signInWithGoogle()
       .then(() => {
+        navigate(location.state ? location.state : "/");
         Swal.fire({
           title: "Success!",
           text: "Login successfully",

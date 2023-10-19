@@ -17,8 +17,17 @@ const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/carts/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setCart(data));
+  }, [user, setUser]);
+
+  console.log(cart);
 
   const switchTheme = () => {
     setDarkMode(!darkMode);
@@ -68,6 +77,8 @@ const AuthProvider = ({ children }) => {
     setLoading,
     darkMode,
     switchTheme,
+    cart,
+    setCart,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

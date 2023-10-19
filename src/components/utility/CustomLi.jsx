@@ -13,7 +13,7 @@ const CustomLi = ({ path, children }) => {
           : ""
       }
     >
-      <li className="hover:bg-slate-700 duration-200 px-4 py-2 rounded-md">
+      <li className="hover:bg-slate-700 duration-200 px-4 py-2 rounded-md flex">
         {children}
       </li>
     </NavLink>
@@ -22,7 +22,7 @@ const CustomLi = ({ path, children }) => {
 
 CustomLi.propTypes = {
   path: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.any.isRequired,
 };
 
 export default CustomLi;

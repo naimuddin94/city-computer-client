@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Input from "../../components/utility/Input";
 import Checkbox from "../../components/utility/Checkbox";
 import { useState } from "react";
@@ -12,6 +12,7 @@ const Register = () => {
   const [error, setError] = useState(null);
   const { createUser, loading, setLoading } = useAuthInfo();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -43,7 +44,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         event.target.reset();
-        navigate("/");
+        navigate(location.state ? location.state : "/");
         setError(null);
         Swal.fire({
           title: "Success!",
@@ -66,8 +67,6 @@ const Register = () => {
         setError(errMessage);
       });
   };
-
-  
 
   return (
     <div className="dark:bg-slate-900 bg-gray-100 flex h-full items-center py-16">

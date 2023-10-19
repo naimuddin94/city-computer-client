@@ -1,8 +1,37 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import BackButton from "../../components/utility/BackButton";
+import useAuthInfo from "../../hooks/useAuthInfo";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
-  const { name, photo, brand, price, description } = useLoaderData();
+  const { user, setCart, cart: oldCart } = useAuthInfo();
+  const product = useLoaderData();
+  const { name, photo, brand, price, description } = product;
+  const navigate = useNavigate();
+
+  const handleCart = (product) => {
+    const email = user.email;
+    const cart = { email, ...product };
+
+    fetch("http://localhost:5000/carts", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(cart),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          setCart([...oldCart, cart]);
+          navigate(-1);
+          Swal.fire({
+            title: "Success!",
+            text: "Product added successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+        }
+      });
+  };
 
   return (
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
@@ -40,7 +69,12 @@ const ProductDetails = () => {
               <h2 className="text-lg font-bold py-2">Price: {price} Tk.</h2>
             </div>
           </div>
-          <button className="btn btn-active btn-warning">Add to cart</button>
+          <button
+            onClick={() => handleCart(product)}
+            className="btn btn-active btn-warning"
+          >
+            Add to cart
+          </button>
         </div>
         {/* <!-- End Col --> */}
       </div>
