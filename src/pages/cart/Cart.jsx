@@ -9,7 +9,7 @@ const Cart = () => {
         cart.map((product) => <CartCard key={product._id} product={product} />)
       ) : (
         <div>
-          <h2>No Cart Available</h2>
+          <h2 className="dark:text-slate-400">No Cart Available</h2>
         </div>
       )}
     </div>
