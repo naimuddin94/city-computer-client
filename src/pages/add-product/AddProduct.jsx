@@ -41,13 +41,16 @@ const AddProduct = () => {
       rating,
     };
 
-    fetch("http://localhost:5000/products", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
+    fetch(
+      "https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/products",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(product),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data.insertedId) {

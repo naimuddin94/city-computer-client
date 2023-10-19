@@ -56,13 +56,16 @@ const UpdateProduct = () => {
     };
     console.log(product);
 
-    fetch(`http://localhost:5000/update/${_id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
+    fetch(
+      `https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/update/${_id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(product),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data.modifiedCount) {

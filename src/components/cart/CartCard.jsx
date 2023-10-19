@@ -18,9 +18,12 @@ const CartCard = ({ product }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/carts/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/carts/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {

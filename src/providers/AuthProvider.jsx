@@ -22,7 +22,9 @@ const AuthProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/carts/${user?.email}`)
+    fetch(
+      `https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/carts/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setCart(data));
   }, [user, setUser]);

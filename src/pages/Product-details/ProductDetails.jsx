@@ -13,11 +13,14 @@ const ProductDetails = () => {
     const email = user.email;
     const cart = { email, ...product };
 
-    fetch("http://localhost:5000/carts", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(cart),
-    })
+    fetch(
+      "https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/carts",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(cart),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {

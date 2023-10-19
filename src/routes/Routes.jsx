@@ -13,10 +13,12 @@ import NotFound from "../pages/error/NotFound";
 
 const homeLoader = async () => {
   const [bannerDataList, companies] = await Promise.all([
-    fetch("http://localhost:5000/banner").then((response) => response.json()),
-    fetch("http://localhost:5000/companies").then((response) =>
-      response.json()
-    ),
+    fetch(
+      "https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/banner"
+    ).then((response) => response.json()),
+    fetch(
+      "https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/companies"
+    ).then((response) => response.json()),
   ]);
 
   return { bannerDataList, companies };
@@ -60,7 +62,10 @@ const router = createBrowserRouter([
       {
         path: "/brand/:name",
         element: <BrandDetails />,
-        loader: () => fetch("http://localhost:5000/companies"),
+        loader: () =>
+          fetch(
+            "https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/companies"
+          ),
       },
       {
         path: "/products/:id",
@@ -70,13 +75,17 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/update/:id",
         element: <UpdateProduct />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/products/${params.id}`
+          ),
       },
     ],
   },
