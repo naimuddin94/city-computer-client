@@ -5,14 +5,16 @@ import {BsPersonWorkspace} from "react-icons/bs"
 const WhyUs = () => {
   return (
     <div className="dark:bg-slate-800 py-8">
-      <h1 className="text-4xl font-black text-center dark:text-slate-500">Why Choose Us</h1>
+      <h1 className="text-4xl font-black text-center text-gradient py-1 dark:text-slate-500">
+        Why Choose Us
+      </h1>
       {/* <!-- Icon Blocks --> */}
       <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 items-center gap-2">
           {/* <!-- Icon Block --> */}
           <a className="group flex flex-col justify-center hover:bg-gray-50 rounded-xl p-4 md:p-7 dark:hover:bg-slate-600">
             <div className="flex justify-center items-center w-12 h-12 bg-blue-600 rounded-xl">
-              <CiDeliveryTruck className="text-xl text-slate-100"/>
+              <CiDeliveryTruck className="text-xl text-slate-100" />
             </div>
             <div className="mt-5">
               <h3 className="group-hover:text-gray-600 text-lg font-semibold text-gray-800 dark:text-white dark:group-hover:text-gray-400">
@@ -65,7 +67,7 @@ const WhyUs = () => {
           {/* <!-- Icon Block --> */}
           <a className="group flex flex-col justify-center hover:bg-gray-50 rounded-xl p-4 md:p-7 dark:hover:bg-slate-600">
             <div className="flex justify-center items-center w-12 h-12 bg-blue-600 rounded-xl">
-              <BsPersonWorkspace className="text-xl text-slate-100"/>
+              <BsPersonWorkspace className="text-xl text-slate-100" />
             </div>
             <div className="mt-5">
               <h3 className="group-hover:text-gray-600 text-lg font-semibold text-gray-800 dark:text-white dark:group-hover:text-gray-400 uppercase">

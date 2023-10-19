@@ -66,7 +66,7 @@ const AddProduct = () => {
       <div className="mx-auto max-w-screen-md py-12 px-4 sm:px-6 md:max-w-screen-xl md:py-20 lg:py-32 md:px-8">
         <div className="md:pr-8 md:w-1/2 xl:pr-0 xl:w-5/12">
           {/* <!-- Title --> */}
-          <h1 className="text-center text-3xl text-gray-800 font-bold md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight dark:text-gray-200 mb-8">
+          <h1 className="text-center text-3xl font-bold md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight dark:text-gray-200 mb-8 text-gradient">
             Add Products
           </h1>
           {/* <!-- End Title --> */}

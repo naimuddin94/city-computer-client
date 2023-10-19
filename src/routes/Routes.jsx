@@ -9,6 +9,7 @@ import BrandDetails from "../pages/brand-details/BrandDetails";
 import ProductDetails from "../pages/Product-details/ProductDetails";
 import UpdateProduct from "../pages/update-product/UpdateProduct";
 import PrivateRoute from "./PrivateRoute";
+import NotFound from "../pages/error/NotFound";
 
 const homeLoader = async () => {
   const [bannerDataList, companies] = await Promise.all([
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",

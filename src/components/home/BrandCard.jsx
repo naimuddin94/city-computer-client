@@ -10,7 +10,7 @@ const BrandCard = ({ company }) => {
           <img src={image} alt={name} className="rounded-xl h-full" />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title text-3xl font-black">{name}</h2>
+          <h2 className="card-title text-3xl font-black text-slate-400 uppercase">{name}</h2>
         </div>
       </div>
     </Link>

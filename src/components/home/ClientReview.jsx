@@ -2,8 +2,8 @@ import { GoArrowRight } from "react-icons/go";
 
 const ClientReview = () => {
   return (
-    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-      <h1 className="text-4xl font-black text-center dark:text-slate-500 pb-12">
+    <div className="max-w-[85rem] px-8 py-5  md:px-12 mx-auto">
+      <h1 className="text-4xl font-black text-center text-gradient dark:text-slate-500 pb-12">
         Reviews
       </h1>
       {/* <!-- Grid --> */}

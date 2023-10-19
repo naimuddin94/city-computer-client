@@ -9,16 +9,18 @@ const MainLayout = () => {
   const navigation = useNavigation();
   return (
     <div className={darkMode ? "dark bg-gray-800" : "bg-gray-200"}>
-      <Header />
-      <Navbar />
-      {navigation.state === "loading" ? (
-        <div className="flex items-center justify-center h-[60vh]">
-          <span className="loading loading-bars loading-lg"></span>
-        </div>
-      ) : (
-        <Outlet />
-      )}
-      <Footer />
+      <div className="max-w-[1440px] mx-auto">
+        <Header />
+        <Navbar />
+        {navigation.state === "loading" ? (
+          <div className="flex items-center justify-center h-[60vh]">
+            <span className="loading loading-bars loading-lg"></span>
+          </div>
+        ) : (
+          <Outlet />
+        )}
+        <Footer />
+      </div>
     </div>
   );
 };

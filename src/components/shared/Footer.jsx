@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-      <footer className="footer p-10 bg-base-300 dark:bg-gray-800 text-base-content dark:text-slate-200">
+      <footer className="footer justify-center md:justify-between p-10 bg-base-300 dark:bg-gray-800 text-base-content dark:text-slate-200">
         <nav>
           <header className="footer-title">Services</header>
           <a className="link link-hover">Branding</a>

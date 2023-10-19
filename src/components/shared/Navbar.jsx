@@ -34,7 +34,7 @@ const Navbar = () => {
         </div>
         <Link
           to="/"
-          className="btn btn-ghost normal-case text-xl md:text-2xl font-satisfy font-bold"
+          className="btn btn-ghost normal-case text-lg md:text-2xl font-satisfy font-bold"
         >
           City Computers
         </Link>

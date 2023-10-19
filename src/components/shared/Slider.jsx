@@ -38,17 +38,19 @@ const Sliders = ({ data }) => {
         {data?.map((item) => (
           <SwiperSlide
             key={item.id}
-            className="w-full h-full  bg-gray-200 py-10 px-20 dark:bg-gray-800 border-2"
+            className="w-full h-full  bg-gray-200 py-10 px-5 md:px-10 lg:px-20 dark:bg-gray-800 border-2"
           >
             <div className="flex flex-col md:flex-row gap-5 justify-between items-center min-h-[25rem]">
               <div className="flex-1 my-auto space-y-3">
-                <h2 className="text-4xl font-bold dark:text-slate-300">
+                <h2 className="text-4xl text-gradient py-1 font-bold dark:text-slate-300">
                   {item.title}
                 </h2>
                 <p className="text-slate-500 font-medium max-w-lg">
                   {item.short_description}
                 </p>
-                <h3 className="bg-yellow-400 w-fit px-5 py-2 rounded-md font-medium">Learn more</h3>
+                <h3 className="bg-yellow-400 w-fit px-5 py-2 rounded-md font-medium">
+                  Learn more
+                </h3>
               </div>
               <div className="flex-1 flex justify-end py-8">
                 <img src={item.image} alt="" className="rounded-lg" />

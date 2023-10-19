@@ -8,23 +8,36 @@ const CartCard = ({ product }) => {
   const { _id, name, photo, price, description } = product;
 
   const handleDelete = (id) => {
-    console.log(id);
-    fetch(`http://localhost:5000/carts/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount) {
-          const remainingCart = cart.filter((product) => product._id !== id);
-          setCart(remainingCart);
-          Swal.fire({
-            title: "Success!",
-            text: "Delete successfully",
-            icon: "success",
-            confirmButtonText: "Ok",
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/carts/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              const remainingCart = cart.filter(
+                (product) => product._id !== id
+              );
+              setCart(remainingCart);
+              Swal.fire({
+                title: "Success!",
+                text: "Delete successfully",
+                icon: "success",
+                confirmButtonText: "Ok",
+              });
+            }
           });
-        }
-      });
+      }
+    });
   };
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
