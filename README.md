@@ -1,8 +1,16 @@
-# React + Vite
+## Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Computer Shop Application
+- Add Product Features
+- Cart Functionality
+- Private Route
+- Client Review Section
+- Full Functionality
+- Firebase Authentication
+- Database Connection
+- Excellent UI
+- Responsive Design
 
-Currently, two official plugins are available:
+## 🔗 Website Link
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[City Computers](https://city-computer-13a94.web.app/)

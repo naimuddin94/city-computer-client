@@ -66,7 +66,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        element: <UpdateProduct />,
+        element: (
+          <PrivateRoute>
+            <UpdateProduct />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/products/${params.id}`
