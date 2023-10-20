@@ -13,6 +13,17 @@ const ProductDetails = () => {
     const email = user.email;
     const cart = { email, ...product };
 
+    const productExists = oldCart.find((product) => product._id === cart._id);
+
+    if (productExists) {
+      return Swal.fire({
+        title: "Warning!",
+        text: "Product already added to cart",
+        icon: "warning",
+        confirmButtonText: "Ok",
+      });
+    }
+
     fetch(
       "https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/carts",
       {
@@ -28,10 +39,11 @@ const ProductDetails = () => {
           navigate(-1);
           Swal.fire({
             title: "Success!",
-            text: "Product added successfully",
+            text: "Cart successfully",
             icon: "success",
             confirmButtonText: "Ok",
           });
+          setLoading(false);
         }
       });
   };
