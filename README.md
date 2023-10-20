@@ -2,10 +2,10 @@
 
 - Computer Shop Application
 - Add Product Features
+- Update Product Features
 - Cart Functionality
 - Private Route
 - Client Review Section
-- Full Functionality
 - Firebase Authentication
 - Database Connection
 - Excellent UI
@@ -13,4 +13,4 @@
 
 ## 🔗 Website Link
 
-[City Computers](https://city-computer-13a94.web.app/)
+Demo live link [City Computers](https://city-computer-13a94.web.app/)
