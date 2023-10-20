@@ -10,19 +10,7 @@ import ProductDetails from "../pages/Product-details/ProductDetails";
 import UpdateProduct from "../pages/update-product/UpdateProduct";
 import PrivateRoute from "./PrivateRoute";
 import NotFound from "../pages/error/NotFound";
-
-const homeLoader = async () => {
-  const [bannerDataList, companies] = await Promise.all([
-    fetch(
-      "https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/banner"
-    ).then((response) => response.json()),
-    fetch(
-      "https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/companies"
-    ).then((response) => response.json()),
-  ]);
-
-  return { bannerDataList, companies };
-};
+import { brandLoader, homeLoader } from "../loader/loader";
 
 const router = createBrowserRouter([
   {
@@ -62,10 +50,7 @@ const router = createBrowserRouter([
       {
         path: "/brand/:name",
         element: <BrandDetails />,
-        loader: () =>
-          fetch(
-            "https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/companies"
-          ),
+        loader: ({ params }) => brandLoader(params.name),
       },
       {
         path: "/products/:id",

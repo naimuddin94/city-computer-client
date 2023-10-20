@@ -1,22 +1,11 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Sliders from "../../components/shared/Slider";
-import { useEffect, useState } from "react";
 import ProductCard from "../../components/brand-details/ProductCard";
 
 const BrandDetails = () => {
-  const [products, setProducts] = useState([]);
-
-  const companies = useLoaderData();
+  const { companies, products } = useLoaderData();
   const { name } = useParams();
   const findBrand = companies.find((company) => company.name === name);
-
-  useEffect(() => {
-    fetch(
-      `https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/brands/${name}`
-    )
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, [name]);
 
   return (
     <div className="px-5">
