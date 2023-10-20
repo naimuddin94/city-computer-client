@@ -19,7 +19,7 @@ const BrandDetails = () => {
   }, [name]);
 
   return (
-    <div>
+    <div className="px-5">
       <Sliders data={findBrand.advertisement} />
       <h1 className="text-4xl text-center font-black dark:text-slate-400 py-5">
         Our Products

@@ -4,7 +4,7 @@ import useAuthInfo from "../../hooks/useAuthInfo";
 const Cart = () => {
   const { cart } = useAuthInfo();
   return (
-    <div className="flex justify-center flex-wrap gap-5 py-10">
+    <div className="flex justify-center flex-wrap gap-5 py-10 px-5">
       {cart?.length ? (
         cart.map((product) => <CartCard key={product._id} product={product} />)
       ) : (

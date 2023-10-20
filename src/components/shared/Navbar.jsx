@@ -37,11 +37,11 @@ const Navbar = () => {
           className="btn btn-ghost normal-case text-lg md:text-2xl font-satisfy font-bold"
         >
           <img
-            src="https://i.postimg.cc/4xmVH2kP/city-computers.png"
+            src="https://i.postimg.cc/g07KDLq8/city-computers-2.png"
             alt=""
-            className="hidden sm:inline h-10 rounded-full"
+            className="hidden sm:inline h-12  mt-1"
           />
-          City Computers
+          <h2>City Computers</h2>
         </Link>
       </div>
       <div className="navbar-center flex gap-10">

@@ -43,7 +43,7 @@ const CartCard = ({ product }) => {
     });
   };
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
+    <div className="card card-compact basis-[22rem] bg-base-100 shadow-xl">
       <figure className="basis-64">
         <img src={photo} alt={name} className="w-full h-full" />
       </figure>
