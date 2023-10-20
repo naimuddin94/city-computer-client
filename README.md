@@ -13,4 +13,4 @@
 
 ## 🔗 Website Link
 
-Demo live link [City Computers](https://city-computer-13a94.web.app/)
+Live link demo [City Computers](https://city-computer-13a94.web.app/)
