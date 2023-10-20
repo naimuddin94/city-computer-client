@@ -4,28 +4,19 @@ import useAuthInfo from "../../hooks/useAuthInfo";
 import Swal from "sweetalert2";
 
 const ProductDetails = () => {
-  const { user, setCart, cart: oldCart } = useAuthInfo();
+  const { user } = useAuthInfo();
   const product = useLoaderData();
   const { name, photo, brand, price, description } = product;
   const navigate = useNavigate();
 
-  const handleCart = (product) => {
+  const handleCart = (addProduct) => {
+    console.log(addProduct);
     const email = user.email;
+    const { _id, ...product } = addProduct;
     const cart = { email, ...product };
 
-    const productExists = oldCart.find((product) => product._id === cart._id);
-
-    if (productExists) {
-      return Swal.fire({
-        title: "Warning!",
-        text: "Product already added to cart",
-        icon: "warning",
-        confirmButtonText: "Ok",
-      });
-    }
-
     fetch(
-      "https://city-compters-server-r56pihd6t-naimuddin94.vercel.app/carts",
+      "https://city-compters-server-cvbkstvqg-naimuddin94.vercel.app/carts",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -35,7 +26,6 @@ const ProductDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          setCart([...oldCart, cart]);
           navigate(-1);
           Swal.fire({
             title: "Success!",

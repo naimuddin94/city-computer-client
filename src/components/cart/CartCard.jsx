@@ -19,7 +19,7 @@ const CartCard = ({ product }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://city-compters-server-r56pihd6t-naimuddin94.vercel.app/carts/${id}`,
+          `https://city-compters-server-cvbkstvqg-naimuddin94.vercel.app/carts/${id}`,
           {
             method: "DELETE",
           }
@@ -27,10 +27,10 @@ const CartCard = ({ product }) => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
-              const remainingCart = cart.filter(
+              const remainingProduct = cart.filter(
                 (product) => product._id !== id
               );
-              setCart(remainingCart);
+              setCart(remainingProduct);
               Swal.fire({
                 title: "Success!",
                 text: "Delete successfully",

@@ -9,7 +9,7 @@ import SocialLogin from "../../components/utility/SocialLogin";
 
 const Login = () => {
   const [error, setError] = useState(null);
-  const { loginUser, loading, setLoading } = useAuthInfo();
+  const { loginUser, loading, setLoading, } = useAuthInfo();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -21,6 +21,7 @@ const Login = () => {
     loginUser(email, password)
       .then(() => {
         navigate(location.state ? location.state : "/");
+     
         Swal.fire({
           title: "Success!",
           text: "Login successfully",

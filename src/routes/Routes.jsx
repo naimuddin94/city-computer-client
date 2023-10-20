@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://city-compters-server-r56pihd6t-naimuddin94.vercel.app/products/${params.id}`
+            `https://city-compters-server-cvbkstvqg-naimuddin94.vercel.app/products/${params.id}`
           ),
       },
       {
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://city-compters-server-r56pihd6t-naimuddin94.vercel.app/products/${params.id}`
+            `https://city-compters-server-cvbkstvqg-naimuddin94.vercel.app/products/${params.id}`
           ),
       },
     ],

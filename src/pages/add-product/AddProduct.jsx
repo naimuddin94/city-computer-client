@@ -42,7 +42,7 @@ const AddProduct = () => {
     };
 
     fetch(
-      "https://city-compters-server-r56pihd6t-naimuddin94.vercel.app/products",
+      "https://city-compters-server-cvbkstvqg-naimuddin94.vercel.app/products",
       {
         method: "POST",
         headers: {

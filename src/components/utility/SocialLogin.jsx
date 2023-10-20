@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const SocialLogin = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { signInWithGoogle } = useAuthInfo();
+  const { signInWithGoogle,  } = useAuthInfo();
   const googleLogin = () => {
     signInWithGoogle()
       .then(() => {

@@ -57,7 +57,7 @@ const UpdateProduct = () => {
     console.log(product);
 
     fetch(
-      `https://city-compters-server-r56pihd6t-naimuddin94.vercel.app/update/${_id}`,
+      `https://city-compters-server-cvbkstvqg-naimuddin94.vercel.app/update/${_id}`,
       {
         method: "PATCH",
         headers: {
