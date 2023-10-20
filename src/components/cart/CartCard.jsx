@@ -19,7 +19,7 @@ const CartCard = ({ product }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/carts/${id}`,
+          `https://city-compters-server-r56pihd6t-naimuddin94.vercel.app/carts/${id}`,
           {
             method: "DELETE",
           }

@@ -27,7 +27,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     fetch(
-      `https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/carts/${user?.email}`
+      `https://city-compters-server-r56pihd6t-naimuddin94.vercel.app/carts/${user?.email}`
     )
       .then((res) => res.json())
       .then((data) => setCart(data));

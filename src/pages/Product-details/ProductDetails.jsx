@@ -25,7 +25,7 @@ const ProductDetails = () => {
     }
 
     fetch(
-      "https://city-compters-server-2na6x9urw-naimuddin94.vercel.app/carts",
+      "https://city-compters-server-r56pihd6t-naimuddin94.vercel.app/carts",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -43,7 +43,6 @@ const ProductDetails = () => {
             icon: "success",
             confirmButtonText: "Ok",
           });
-          setLoading(false);
         }
       });
   };
