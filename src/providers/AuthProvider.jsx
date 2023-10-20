@@ -17,9 +17,13 @@ const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [name, setName] = useState("");
+  const [photo, setPhoto] = useState("");
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
+
+  console.log(name, photo);
 
   useEffect(() => {
     fetch(
@@ -29,8 +33,6 @@ const AuthProvider = ({ children }) => {
       .then((data) => setCart(data));
   }, [user, setUser]);
 
-  console.log(cart);
-
   const switchTheme = () => {
     setDarkMode(!darkMode);
   };
@@ -38,6 +40,8 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setName(currentUser?.displayName);
+      setPhoto(currentUser?.photoURL);
       setLoading(false);
     });
 
@@ -65,7 +69,9 @@ const AuthProvider = ({ children }) => {
   };
 
   const logOut = () => {
-    signOut(auth);
+    setName("");
+    setPhoto("");
+    return signOut(auth);
   };
 
   const authInfo = {
@@ -81,6 +87,10 @@ const AuthProvider = ({ children }) => {
     switchTheme,
     cart,
     setCart,
+    name,
+    setName,
+    photo,
+    setPhoto,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

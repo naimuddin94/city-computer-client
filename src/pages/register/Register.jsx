@@ -10,7 +10,7 @@ import SocialLogin from "../../components/utility/SocialLogin";
 
 const Register = () => {
   const [error, setError] = useState(null);
-  const { createUser, loading, setLoading } = useAuthInfo();
+  const { createUser, loading, setLoading, setName, setPhoto } = useAuthInfo();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -52,6 +52,8 @@ const Register = () => {
           icon: "success",
           confirmButtonText: "Ok",
         });
+        setName(name);
+        setPhoto(photo);
         // update profile
         updateProfile(result.user, {
           displayName: name,
