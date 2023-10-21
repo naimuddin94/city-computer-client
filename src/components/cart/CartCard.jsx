@@ -5,7 +5,7 @@ import useAuthInfo from "../../hooks/useAuthInfo";
 
 const CartCard = ({ product }) => {
   const { cart, setCart } = useAuthInfo();
-  const { _id, name, photo, price, description } = product;
+  const { _id, name, photo, price, description, brand } = product;
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -48,7 +48,10 @@ const CartCard = ({ product }) => {
         <img src={photo} alt={name} className="w-full h-full" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{name}</h2>
+        <div className="flex items-center justify-between">
+          <h2 className="card-title">{name}</h2>
+          <h3 className="badge">{ brand}</h3>
+        </div>
         <p>{description.slice(0, 150)}</p>
         <h2 className="text-xl font-bold py-2 px-4 mt-2 rounded-md flex items-center bg-rose-300 w-fit">
           {price}

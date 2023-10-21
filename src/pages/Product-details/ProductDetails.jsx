@@ -1,17 +1,35 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import BackButton from "../../components/utility/BackButton";
 import useAuthInfo from "../../hooks/useAuthInfo";
 import Swal from "sweetalert2";
 
 const ProductDetails = () => {
-  const { user } = useAuthInfo();
+  const { user, setCart, cart: oldCart } = useAuthInfo();
   const product = useLoaderData();
   const { name, photo, brand, price, description } = product;
+  const navigate = useNavigate();
 
   const handleCart = (addProduct) => {
     const email = user.email;
+    // eslint-disable-next-line no-unused-vars
     const { _id, ...product } = addProduct;
     const cart = { email, ...product };
+
+    const isExist = oldCart.find(
+      (prod) =>
+        prod.name === addProduct.name &&
+        prod.photo === addProduct.photo &&
+        prod.price === addProduct.price
+    );
+
+    if (isExist) {
+      return Swal.fire({
+        title: "Warning!",
+        text: "Product already added",
+        icon: "warning",
+        confirmButtonText: "Ok",
+      });
+    }
 
     fetch(
       "https://city-compters-server-cvbkstvqg-naimuddin94.vercel.app/carts",
@@ -24,6 +42,8 @@ const ProductDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
+          setCart([...oldCart, cart]);
+          navigate(`/brand/${brand}`);
           Swal.fire({
             title: "Success!",
             text: "Cart successfully",
@@ -36,7 +56,7 @@ const ProductDetails = () => {
 
   return (
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-      <BackButton />
+      <BackButton to={`/brand/${brand}`} />
       {/* <!-- Grid --> */}
       <div className="grid sm:grid-cols-2 sm:items-center gap-8">
         <div className="sm:order-2">

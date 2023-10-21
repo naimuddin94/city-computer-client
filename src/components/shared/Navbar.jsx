@@ -3,7 +3,7 @@ import NavLi from "../utility/NavLi";
 import useAuthInfo from "../../hooks/useAuthInfo";
 
 const Navbar = () => {
-  const { user, name, photo } = useAuthInfo();
+  const { name, photo } = useAuthInfo();
   const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i.test(photo);
   return (
     <div className="navbar justify-between z-50 max-w-[1440px] mx-auto text-gray-100 bg-[#3a4468] px-4 md:px-8 sticky top-0">
