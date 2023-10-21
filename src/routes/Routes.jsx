@@ -11,6 +11,7 @@ import UpdateProduct from "../pages/update-product/UpdateProduct";
 import PrivateRoute from "./PrivateRoute";
 import NotFound from "../pages/error/NotFound";
 import { brandLoader, homeLoader } from "../loader/loader";
+import NonUserRoute from "./NonUserRoute";
 
 const router = createBrowserRouter([
   {
@@ -41,11 +42,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login />,
+        element: (
+          <NonUserRoute>
+            <Login />
+          </NonUserRoute>
+        ),
       },
       {
         path: "/register",
-        element: <Register />,
+        element: (
+          <NonUserRoute>
+            <Register />
+          </NonUserRoute>
+        ),
       },
       {
         path: "/brand/:name",

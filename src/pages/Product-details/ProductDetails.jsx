@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import BackButton from "../../components/utility/BackButton";
 import useAuthInfo from "../../hooks/useAuthInfo";
 import Swal from "sweetalert2";
@@ -7,10 +7,8 @@ const ProductDetails = () => {
   const { user } = useAuthInfo();
   const product = useLoaderData();
   const { name, photo, brand, price, description } = product;
-  const navigate = useNavigate();
 
   const handleCart = (addProduct) => {
-    console.log(addProduct);
     const email = user.email;
     const { _id, ...product } = addProduct;
     const cart = { email, ...product };
@@ -26,7 +24,6 @@ const ProductDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          navigate(-1);
           Swal.fire({
             title: "Success!",
             text: "Cart successfully",

@@ -6,6 +6,7 @@ import ClientReview from "../../components/home/ClientReview";
 
 const Home = () => {
   const { bannerDataList, companies } = useLoaderData();
+
   return (
     <>
       <Banner bannerDataList={bannerDataList} />

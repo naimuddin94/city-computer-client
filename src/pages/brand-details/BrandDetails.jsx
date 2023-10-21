@@ -16,7 +16,7 @@ const BrandDetails = () => {
       {products.length === 0 ? (
         <div className="flex justify-center items-center h-[50vh]">
           <h2 className="text-xl font-semibold text-center dark:text-slate-400">
-            No product available
+            Product coming soon
           </h2>
         </div>
       ) : (
