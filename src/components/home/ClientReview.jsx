@@ -14,7 +14,7 @@ const ClientReview = () => {
             <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
               <img
                 className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl"
-                src="https://i.ibb.co/VwwD7hP/c147f642abc5e02fae135c249bcbaa6e.webp"
+                src="https://res.cloudinary.com/dxoncladp/image/upload/v1703245780/images/zjljsl2wzwmmaip3ahnj.jpg"
                 alt="Image Description"
               />
             </div>
@@ -43,7 +43,7 @@ const ClientReview = () => {
             <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
               <img
                 className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl"
-                src="https://i.ibb.co/0y35mzB/ac7ccd589c14a2a319af8fafacdde773.webp"
+                src="https://res.cloudinary.com/dxoncladp/image/upload/v1703246744/images/ghucgmlgereccqxxlhdj.jpg"
                 alt="Image Description"
               />
             </div>
@@ -71,7 +71,7 @@ const ClientReview = () => {
             <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
               <img
                 className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl"
-                src="https://i.ibb.co/jJ7yFNN/6b51421641eb4be453a98c2cce254eb3.webp"
+                src="https://res.cloudinary.com/dxoncladp/image/upload/v1702836025/images/g5ifdertctzafu3nuopp.jpg"
                 alt="Image Description"
               />
             </div>
@@ -99,7 +99,7 @@ const ClientReview = () => {
             <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
               <img
                 className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl"
-                src="https://i.ibb.co/B4yRzVg/43a006469255d72ba808e71383dddda6.webp"
+                src="https://res.cloudinary.com/dxoncladp/image/upload/v1703236803/images/xuugq62fhryccwrdnm7k.jpg"
                 alt="Image Description"
               />
             </div>
